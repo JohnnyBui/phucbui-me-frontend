@@ -26,13 +26,13 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run: 
-          name: Firebase Tools
-          command: npm install firebase-tools
-
       - run:
           name: Node dependencies
           command: npm install
+
+      - run: 
+          name: Firebase Tools & Gulp
+          command: npm install firebase-tools && npm install gulp
 
       - save_cache:
           paths:
