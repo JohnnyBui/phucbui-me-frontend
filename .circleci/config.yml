@@ -32,7 +32,7 @@ jobs:
 
       - run: 
           name: Firebase Tools & Gulp
-          command: npm install firebase-tools && npm install gulp
+          command: npm install firebase-tools && npm install gulp-cli
 
       - save_cache:
           paths:
