@@ -4,6 +4,7 @@ const pug = require('gulp-pug');
 const sass = require('gulp-sass');
 const minifyCSS = require('gulp-csso');
 const fs = require('fs');
+const del = require('del');
 
 gulp.task('html', function () {
   return gulp.src('src/templates/*.pug')
@@ -23,4 +24,14 @@ gulp.task('css', function () {
     .pipe(gulp.dest('dist'))
 });
 
-gulp.task('default', ['html', 'css']);
+gulp.task('static', function () {
+  gulp.src('src/static/**/*')
+    .pipe(gulp.dest('dist'));
+});
+
+gulp.task('clean', () => {
+  return del.sync('dist');
+});
+
+gulp.task('build', ['clean', 'html', 'css', 'static']);
+gulp.task('default', ['build']);
