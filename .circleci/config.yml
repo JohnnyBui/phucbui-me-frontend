@@ -27,12 +27,12 @@ jobs:
           - v1-dependencies-
 
       - run: 
-        name: Firebase Tools
-        command: npm install -g firebase-tools
+          name: Firebase Tools
+          command: npm install -g firebase-tools
 
       - run:
-        name: Node dependencies
-        command: npm install
+          name: Node dependencies
+          command: npm install
 
       - save_cache:
           paths:
@@ -40,11 +40,11 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
         
       - run:
-        name: Build
-        command: gulp build
+          name: Build
+          command: gulp build
 
       - run:
-        name: deploy
-        command: firebase deploy --token=$FIREBASE_TOKEN
+          name: deploy
+          command: firebase deploy --token=$FIREBASE_TOKEN
 
 
