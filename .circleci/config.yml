@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/node:8.9.4
+      - image: circleci/node:6.9.0
       
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -32,7 +32,7 @@ jobs:
 
       - run: 
           name: Firebase Tools & Gulp
-          command: sudo npm install -g gulp-cli
+          command: sudo npm install -g gulp-cli && sudo npm install -g firebase-tools
 
       - save_cache:
           paths:
