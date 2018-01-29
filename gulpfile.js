@@ -12,11 +12,6 @@ gulp.task('html', function () {
         fs.readFileSync('src/data/data.json')
       );
     }))
-    .pipe(data(() => {
-      return {
-        year: new Date().getFullYear()
-      };
-    }))
     .pipe(pug())
     .pipe(gulp.dest('dist'))
 });
