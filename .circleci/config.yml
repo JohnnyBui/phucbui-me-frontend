@@ -32,7 +32,7 @@ jobs:
           command: gulp build
 
       - run:
-          name: deploy
+          name: Deploy
           command: firebase deploy --token=$FIREBASE_TOKEN
 
 
