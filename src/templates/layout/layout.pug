@@ -12,5 +12,13 @@ html(lang='en-US')
     link(rel='stylesheet', href='./style.css', type='text/css', media='screen')
     meta(name='viewport', content='width=device-width,initial-scale=1')
     link(rel='icon', type='image/png', href='images/favicon.png' sizes='32x32')
+    // Scripts
+    // Global site tag (gtag.js) - Google Analytics
+    script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-53912386-3')
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-53912386-3');
   body#fullsingle.page-template-page-fullsingle-me.me-video
     block content
